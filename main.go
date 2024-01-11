@@ -3,6 +3,7 @@ package main
 import (
 	"cache/cache"
 	"fmt"
+	"time"
 )
 
 func main() {
@@ -14,7 +15,8 @@ func main() {
 	}
 	fmt.Println(printDelItemCache(c.DeleteCacheItem("key2")))
 	fmt.Println(printDelItemCache(c.DeleteCacheItem("key1")))
-	c.Clean()
+
+	time.Sleep(time.Second * 10)
 }
 func printDelItemCache(b bool, err error) string {
 	if err != nil {
